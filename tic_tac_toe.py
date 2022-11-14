@@ -3,9 +3,7 @@ import os
 import random
 import re
 
-# Display
-
-
+# Display the board 
 def display_board(board):
     os.system('cls')
     print('   |   |')
@@ -20,7 +18,7 @@ def display_board(board):
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
     print('   |   |')
 
-# Taking input
+# Taking input from the user
 def player_input():
     marker = ''
     while marker != 'X' and marker != 'O':
@@ -77,7 +75,6 @@ def player_choice(board):
 def replay():
     return(input('Do You want to continue [Y or N]?').upper().startswith('Y'))
 
-
 # THE ACTUAL CODE TO WORK THIS GAME !!! LOGIC
 print('Welcome to Tic Tac Toe!')
 while True:
@@ -86,15 +83,12 @@ while True:
     player1_marker, player2_marker = player_input()
     turn = choose_first()
     print(turn +' will go First.')
-
     play_game = input('Ready to play the game?[y or N]').upper()
-
     if play_game[0] == 'Y':
         game_on = True
     else:
         game_on = False
     # pass
-
     while game_on:
         # Player 1 Turn
         if turn == 'Player1':
@@ -133,8 +127,7 @@ while True:
                     print("Its a Tie!")
                     break
                 else:
-                    turn = 'Player1'
-            
+                    turn = 'Player1'        
     if not replay():
         break
 
